@@ -1,0 +1,22 @@
+@media(max-width: 1000px) {
+    header h1 {     
+        top: 30%;
+        font-size: 50px;
+    }
+    
+    #dyna {
+        font-size: 40px;
+    }
+    
+    #cods {
+        font-size: 40px;
+    }
+    
+    header h2 {     
+        top: 80%;          
+        font-size: 30px;
+    }
+    
+
+    
+}
