@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How Data Structure Works</title>
+        <link rel="stylesheet" href="myPage.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script> 
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Merriweather:400i|Muli|Noto+Serif|Source+Code+Pro&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">   
+        <link href="https://fonts.googleapis.com/css?family=Arvo:700&display=swap" rel="stylesheet"> 
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="bgPicture">
+            <header>
+                <div>
+                    <h1><b style="font-size: 120px;">L</b>earn <b style="font-size: 120px;">C</b>hapters: Data structures</h1>
+                    <h2>Website to learn <b id="dyna">dynamicness</b> of <b id="cods">complex data structures</b></h2>
+                </div>
+            </header>
+        </div>
+        <div class="container">
+            <div class = "myAce">
+                <div class="getTheData">
+                    <Center><h3>Try It <span style='font-size: 50px;'>&#128521;</span> </h3>  </Center>
+                    <input type="text" class="insertedData" id="inData">
+
+                    <div class="myBtn">
+                        <button  value="Add Data" class="addBtn" id="addBtnId" onclick="addDataInList(event)">Add Data</button>
+                    </div>
+
+                    <input type="text" class="removingData" id="outData">
+                    <div class="myBtn">
+                        <button value="Remove Data" class="deleteBtn" id="deleteBtnId" onclick="deleteDataInList(event)">Remove Data</button>
+                    </div>
+
+                    <div class = "myBtn"> 
+                        <button value="Clear" onclick="clearAllData(event)">Clear</button>
+                    </div>
+                </div>
+
+                <div class="canvasCon">
+                    <div class="tab">
+                        <button class="tablinks" id="ListBtn" onclick="showListView(event)">List</button>
+                        <button class="tablinks" id="TreeBtn" onclick="showTreeView(event)">Tree</button>
+                        <button class="tablinks" id="HashBtn" onclick="showHashView(event)">Hash</button>
+                    </div>
+                <!-- Tab content -->
+                    <div class="tabcontent" id="Canvas"> 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container2" id="information">
+        </div>
+        <hr>
+        <footer>
+            <div class="footCon1">
+                <h2>Contact  </h2>
+                <a href="https://github.com/leo13200006" target="_blank"><i class='fa fa-2x fa-github-alt icon' id="git"></i></a>
+                <a href="https://www.linkedin.com/in/laukik-chavan-aba574137/" target="_blank"><i class="fa fa-2x fa-facebook-f icon" id="face"></i></a>
+                <a href="https://www.instagram.com/l_a_u_k_i_k_19/" target="_blank"><i class='fa fa-2x fa-instagram icon' id="insta"></i></a>
+                <a href="https://www.facebook.com/laukik.chavan.1" target="_blank"><i class='fa fa-2x fa-linkedin icon' id="linkd"></i></a>
+            </div>
+            <div class="footCon2">
+                <h1>Design and Developed By :- <b>Laukik Chavan</b></h1>
+            </div>
+        </footer>
+    </body>
+</html>
