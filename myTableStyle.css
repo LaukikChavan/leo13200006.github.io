@@ -1,4 +1,9 @@
 @media(max-width: 1000px) {
+
+    .bgPicture {
+        background-size: cover;
+    }
+
     header h1 {     
         top: 30%;
         font-size: 50px;
@@ -17,6 +22,142 @@
         font-size: 30px;
     }
     
-
+    .myAce {
+        padding: 5px;
+    }
     
+    .tab button {
+        padding: 4px 3px;
+        font-size: 25px;
+        box-shadow: 0 4px #999;
+      }
+    
+      .tab button:active {
+        top : 4px;
+      }
+
+      .tabcontent {
+        padding: 3px 9px;
+        margin: 10px 0px 10px 10px;
+      }
+
+      .getTheData h3 {     
+        font-size: 25px;
+        letter-spacing: 1px;
+        padding-bottom: 20px;      
+      }
+    
+      .getTheData {
+          padding: 5px;
+      }
+    
+      .canvasCon {
+          padding: 5px;
+      }
+    
+      .getTheData input {
+        padding: 5px;
+        font-size: 15px;   
+        border: 1px solid black;
+        border-radius: 15px;
+      }
+    
+      .getTheData input:focus {
+        border-color : blue;
+      }
+    
+    .myBtn button {
+        border-radius: 7px;
+        font-size: 20px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        padding: 2px 0px;
+        box-shadow: 0 4px #999;
+    }
+    
+    .myBtn button:active {
+        top : 4px;
+      }
+
+    .arrow {
+        font-size: 10px;
+    }
+    
+    .node {
+        font-size: 20px;
+        padding: 8px;
+    }
+    
+    .tree .node {
+        margin:7px;
+        width: 30px;
+        height: 30px;  
+    }
+    
+    .list .node {     
+        margin:7px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .list .arrow {
+        font-size: 30px;
+    }
+    
+    .tree .arrow {
+        font-size: 25px;
+    }
+    
+    .hash .node {     
+        margin: 5px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .hash .hashLabel {
+        width: 70px;
+        height: 70px;
+        font-weight: lighter;
+    }
+    
+    .container {
+        height: 450px;
+    }
+    
+    .container2 {
+        padding-left: 7px; 
+        margin-right: 15px;
+    }
+    
+    .container2 h3 {
+        font-size: 45px;
+    }
+    
+    .container2 p {
+        padding-right: 15px;
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding-bottom: 15px;
+    }
+
+    footer {
+        padding: 7px;
+    }
+    
+    .footCon2 {
+        position: absolute;
+        right: 3px;
+    }
+    
+    .footCon2 h1 {
+        font-size: 15px;
+    }
+    
+    footer h2 {
+        font-size: 10px;
+    }
+    
+    .icon {
+        padding: 7px;
+    }
 }
