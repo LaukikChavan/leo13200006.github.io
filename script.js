@@ -3,7 +3,8 @@
   var elements;
   var playPause;
   var arrowEle;
-
+  var viewprtwidth;
+  
   function addDataInList(evt) {
       var node = document.getElementById('inData').value;
       if(node === "") {
@@ -11,7 +12,7 @@
       } else {
         document.getElementById('inData').style.borderColor = "black";
         numbers.push(Number(node));
-        console.log(numbers);
+
         document.getElementById('inData').value = "";
         switch(whichDisplay) {
           case 0:
@@ -139,6 +140,7 @@
   var num = document.createElement('div');
   num.className = "view hash";
   num.id = "view"
+
   var check = document.getElementById('Canvas').children.length;
   if(check > 0) {
     document.getElementById('Canvas').removeChild(document.getElementById('view'));
@@ -176,6 +178,9 @@
 
   function addNumbers(evt) {
     for(var i=0; i < numbers.length; i++) {
+      
+      width = $( window ).width();
+      console.log(width);
 
       if(i > 0 && (whichDisplay == 0 || whichDisplay == 1)) {
         var arr = document.createElement('i');
@@ -194,7 +199,11 @@
         var arr = document.createElement('p');
         arr.className = "hashLabel";
         arr.id = "nuNode";
-        arr.style = "font-size:25px";
+        if(width > 1000) {
+          arr.style = "font-size:25px";
+        } else {
+          arr.style = "font-size:15px";          
+        }
         arr.appendChild(document.createTextNode(' Hash of ' + (i).toString()));
         document.getElementById('view').appendChild(arr);
         arr.style.position = "absolute";
@@ -245,7 +254,37 @@
     elements = document.querySelectorAll('.node');
     arrowEle = document.querySelectorAll('.arrow');
 
+    width = $( window ).width();
+    console.log(width);
+
+    var xFacE = [];
+    var yFacE = []
+
+    var xFacA = [];
+    var yFacA = [];
+
     var sh = 150;
+
+    if(width > 1000) {
+      yFacE = [0, 100, 280]
+      xFacE = [300, 150, 450, 75, 225, 375, 525];
+
+      yFacA = [60, 210];
+      xFacA = [230, 430, 135, 210, 445, 530];
+    } else {
+        yFacE = [0, 50, 120]
+        xFacE = [300, 150, 450, 75, 225, 375, 525].map(function(x) {
+          return x * 0.4  - 150;
+        });
+
+
+      yFacA = [30, 100];
+      xFacA = [230, 430, 135, 210, 445, 530].map(function(x) {
+        return x * 0.4 - 150;
+      });
+
+    }
+
     var tempy;
     var tempx;
     anime({
@@ -253,11 +292,11 @@
       translateY: [
           {value: function(el, i, n) {
             if(i == 0) {
-              tempy = 0;
+              tempy = yFacE[0];
             }else if(i < 3) {
-              tempy = 100;
+              tempy = yFacE[1];
             } else {
-              tempy = 280;
+              tempy = yFacE[2];
             }
             return tempy;
           }, duration: 1000},
@@ -265,19 +304,19 @@
       translateX: [
         {value: function(el, i, l) {
          if(i === 0) {
-          tempx = 300+sh;;
+          tempx = xFacE[0]+sh;
          }else if(i === 1) {
-          tempx = 150+sh;;
+          tempx = xFacE[1]+sh;
          } else if(i === 2){
-          tempx = 450+sh;;
+          tempx = xFacE[2]+sh;
          } else if(i === 3) {
-          tempx = 75+sh;;
+          tempx = xFacE[3]+sh;
          } else if(i === 4) {
-          tempx = 225+sh;;
+          tempx = xFacE[4]+sh;
          } else if(i === 5) {
-          tempx = 375+sh;;
+          tempx = xFacE[5]+sh;
          } else {
-          tempx = 525+sh;;
+          tempx = xFacE[6]+sh;
          }
           return tempx;
         }, duration: 200},
@@ -291,9 +330,9 @@
       translateY: [
           {value: function(el, i, n) {
             if(i < 2) {
-              tempy = 65;
+              tempy = yFacA[0];
             }else  {
-              tempy = 220;
+              tempy = yFacA[1];
             } 
             return tempy;
           }, duration: 1000},
@@ -301,17 +340,17 @@
       translateX: [
         {value: function(el, i, l) {
          if(i === 0) {
-          tempx = 230+sh;;
+          tempx = xFacA[0]+sh;
          }else if(i === 1) {
-          tempx = 430+sh;;
+          tempx = xFacA[1]+sh;
          } else if(i === 2){
-          tempx = 135+sh;;
+          tempx = xFacA[2]+sh;
          } else if(i === 3) {
-          tempx = 210+sh;;
+          tempx = xFacA[3]+sh;
          } else if(i === 4) {
-          tempx = 425+sh;;
+          tempx = xFacA[4]+sh;
          } else {
-          tempx = 530+sh;;
+          tempx = xFacA[5]+sh;
          }
           return tempx;
         }, duration: 200,
@@ -342,16 +381,33 @@
 
   function animateList(evt) {
     console.log('in animataion');
+    width = $( window ).width();
+    console.log(width);
     elements = document.querySelectorAll('.node');
     arrowEle = document.querySelectorAll('.arrow');
     
+    var yFacE , yFacA;
+    var xFacE , xFacA;
+
+    if(width > 1000) {
+      yFacE = 80;
+      xFacE = 80;
+      yFacA = 90;
+      xFacA = 80;
+    } else {
+      yFacE = 0;
+      xFacE = 20;
+      yFacA = 0;
+      xFacA = 20;      
+    }
+
     anime({
       targets: elements,
       translateY: [
-          {value: 80, duration: 1000},
+          {value: yFacE, duration: 1000},
       ],
       translateX: [
-        {value: 10, duration: 200},
+        {value: xFacE, duration: 200},
       ],
       delay: function(el, i, l) {return i * 200},
       autoplay: true,
@@ -360,10 +416,10 @@
     anime({
       targets: arrowEle,
       translateY: [
-          {value: 90, duration: 1000},
+          {value: yFacA, duration: 1000},
       ],
       translateX: [
-        {value: 10, duration: 200},
+        {value: xFacA, duration: 200},
       ],
       delay: function(el, i, l) {return i * 250},
       autoplay: true,
@@ -373,11 +429,39 @@
   function animateHash(evt) {
     var hashCheck = [];
     console.log('in animataion');
+
+
+    width = $( window ).width();
+    console.log(width);
+
     elements = document.querySelectorAll('.node');
     arrowEle = document.querySelectorAll('.hashLabel');
     var temp;
     var minY = 40;
     var minX = -50;
+
+    var yFac = [];
+    var xFacE = [];
+    var xFacA = [];
+
+    if(width > 1000) {
+      yFac = [30, 160, 290];
+      xFacE = [150, 500, 850];
+      xFacA = [0, 350, 650];
+    } else {
+
+      yFac = [30, 160, 290].map(function(x) {
+        return x * 0.4;
+      });
+
+      xFacE = [150, 500, 850].map(function(x) {
+        return x * 0.4+10;
+      });
+      xFacA = [50, 400, 750].map(function(x) {
+        return x * 0.4 ;
+      });
+    }
+ 
     anime({
       targets: elements,
       translateY: [
@@ -395,22 +479,22 @@
               hashCheck.push(temp);
             }
             if((temp % 3) === 0) {
-              return 30-minY;
+              return yFac[0]-minY;
             } else if((temp % 3) === 1) {
-              return 160-minY;
+              return yFac[1]-minY;
             } else {
-              return 290-minY;
+              return yFac[2]-minY;
             }
           }, duration: 1000},
       ],
       translateX: [
         {value: function(el, i, n) {
           if(temp < 3) {
-            return 150-minX;
+            return xFacE[0];
           } else if(temp < 6) {
-            return 500-minX;
+            return xFacE[1];
           } else {
-            return 850-minX;
+            return xFacE[2];
           }
         }, duration: 200},
       ],
@@ -423,22 +507,22 @@
       translateY: [
           {value: function(el, i, n) {
             if((i % 3) === 0) {
-              return 30;
+              return yFac[0];
             } else if((i % 3) === 1) {
-              return 160;
+              return yFac[1];
             } else {
-              return 290;
+              return yFac[2];
             }
           }, duration: 1000},
       ],
       translateX: [
         {value: function(el, i, n) {
           if(i < 3) {
-            return 50;
+            return xFacA[0];
           } else if(i < 6) {
-            return 400;
+            return xFacA[1];
           } else {
-            return 750;
+            return xFacA[2];
           }
         }, duration: 200},
       ],

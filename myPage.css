@@ -84,7 +84,7 @@ header h2 {
 .tab {
     overflow: hidden;
     width: 100%;
-    height: 100px;;
+    height: 100px;
   }
   
   .tab button {
@@ -154,12 +154,8 @@ header h2 {
     border-radius: 15px;
   }
 
-  .getTheData input:focus{
-    padding: 10px;
-    font-size: 25px;      
-    width: 90%;
-    border: 2px solid blue;
-    border-radius: 15px;
+  .getTheData input:focus {
+    border-color: blue;
   }
 
 .myBtn button {
@@ -300,6 +296,7 @@ footer {
 }
 
 footer h2 {
+    font-size: 20px;
     font-family: 'Arvo', serif;
 }
 
